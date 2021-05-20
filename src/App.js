@@ -1,9 +1,9 @@
-function App() {
-  return (
-    <div className="App">
-      <h1>Fluence</h1>
-    </div>
-  );
-}
+import Nav from './Nav';
+
+const App = () => (
+  <div className="wrapper">
+    <Nav />
+  </div>
+);
 
 export default App;
