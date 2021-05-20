@@ -5,11 +5,13 @@ html {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: b
 
 *, *:before, *:after {box-sizing: inherit}
 
-/* GENERAL STYLES */
+.sr-only {position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
+/* GENERAL STYLES */
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap');
 
-* {
+/* check */
+body, h1, h2, h3, ul, p {
     margin: 0;
     padding: 0;
 }
@@ -21,6 +23,7 @@ html {
 body {
     font-size: 2rem;
     font-family: 'Nunito Sans', sans-serif;
+    color: #333;
 }
 
 li {
@@ -55,9 +58,55 @@ nav li {
 }
 
 nav a {
+    /* check */
     color: #333;
     font-size: 3rem;
     font-weight: 600;
     line-height: 4.8rem;
+    /* check */
     letter-spacing: -0.022em;
+}
+
+/* HEADER STYLES */
+header {
+    /* border: 2px solid #ffc600; */
+    font-weight: 600;
+    letter-spacing: -0.022em;
+    text-align: center;
+    width: 735px;
+    margin: 111px auto 0;
+}
+
+header h1 {
+    font-size: 5rem;
+    line-height: 8rem;
+}
+
+header p {
+    font-size: 2.5rem;
+    line-height: 4.4rem;
+}
+
+header input,
+header button {
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 56px;
+}
+
+header input {
+    width: 378px;
+    margin-right: 20px;
+    padding-left: 20px;
+    outline: none;
+}
+
+header button {
+    width: 155px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+header button + p {
+    font-size: 2rem;
 }
