@@ -1,17 +1,22 @@
+import { NavLink } from 'react-router-dom';
 import logo from './logo.svg';
 
 const Nav = () => (
   <nav>
-    <img src={logo} alt="logo" />
+    <NavLink to="/">
+      <img src={logo} alt="logo" />
+    </NavLink>
     <ul>
       <li>
-        <a href="/">Calculator</a>
+        <NavLink to="/calculator" activeStyle={{ textDecoration: 'underline' }}>
+          Calculator
+        </NavLink>
       </li>
       <li>
-        <a href="/">Compare</a>
+        <NavLink to="/compare">Compare</NavLink>
       </li>
       <li>
-        <a href="/">Contact</a>
+        <NavLink to="/contact">Contact</NavLink>
       </li>
     </ul>
   </nav>

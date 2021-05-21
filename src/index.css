@@ -136,3 +136,17 @@ header button + p {
     line-height: 2rem;
     color: black;
 }
+
+/* CALCULATOR STYLES */
+.calculator {
+    text-align: center;
+}
+
+.calculator button {
+    margin-top: 200px;
+    padding: 10px 30px;
+    border: none;
+    background-color: orange;
+    /* color: white; */
+    cursor: pointer;
+}

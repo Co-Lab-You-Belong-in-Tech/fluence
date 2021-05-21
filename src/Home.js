@@ -1,4 +1,4 @@
-const Header = () => (
+const Home = () => (
   <header>
     <h1>Empowering Your Creative Voice</h1>
     <p>
@@ -15,4 +15,4 @@ const Header = () => (
   </header>
 );
 
-export default Header;
+export default Home;
