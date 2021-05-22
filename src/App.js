@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Nav from './Nav';
 import Home from './Home';
-import HowItWorks from './HowItWorks';
+// import HowItWorks from './HowItWorks';
 import Calculator from './Calculator';
 import Analysis from './Analysis';
 
