@@ -1,27 +1,27 @@
 @use 'variables' as *;
 
-nav {
-    // border: 2px solid red;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
+// nav {
+//     border: 2px solid red;
+//     display: flex;
+//     justify-content: space-between;
+//     margin-top: 40px;
 
-    ul {
-        display: flex;
-        align-items: flex-end;
+//     ul {
+//         display: flex;
+//         align-items: flex-end;
 
-        li {
-            margin-left: 70px;
+//         li {
+//             margin-left: 70px;
 
-            a {
-                // check
-                color: $text-colour;
-                font-size: 3rem;
-                font-weight: 600;
-                line-height: 4.8rem;
-                // check
-                letter-spacing: -0.022em;
-            }
-        }
-    }
-}
+//             a {
+//                 // check
+//                 color: $text-colour;
+//                 font-size: 3rem;
+//                 font-weight: 600;
+//                 line-height: 4.8rem;
+//                 // check
+//                 letter-spacing: -0.022em;
+//             }
+//         }
+//     }
+// }
