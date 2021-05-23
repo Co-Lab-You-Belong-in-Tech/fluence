@@ -3,20 +3,20 @@ import logo from './logo.svg';
 
 const Nav = () => (
   <nav>
-    <NavLink to="/">
-      <img src={logo} alt="logo" />
-    </NavLink>
-    <ul>
+    <ul className="wrapper">
       <li>
-        <NavLink to="/calculator" activeStyle={{ textDecoration: 'underline' }}>
-          Calculator
+        <NavLink to="/">
+          <img src={logo} alt="logo" />
         </NavLink>
       </li>
       <li>
-        <NavLink to="/compare">Compare</NavLink>
-      </li>
-      <li>
-        <NavLink to="/contact">Contact</NavLink>
+        <NavLink
+          to="/calculator"
+          activeStyle={{ textDecoration: 'underline' }}
+          className="nav-calculator"
+        >
+          Calculator
+        </NavLink>
       </li>
     </ul>
   </nav>
