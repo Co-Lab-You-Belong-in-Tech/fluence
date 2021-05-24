@@ -10,8 +10,8 @@ const Nav = () => {
   const splitLocation = pathname.split('/');
 
   return (
-    <nav>
-      <ul className="wrapper">
+    <nav className="wrapper">
+      <ul>
         <li>
           <NavLink to="/">
             <img src={logo} alt="logo" />
@@ -20,9 +20,11 @@ const Nav = () => {
         <li>
           <NavLink
             to="/calculator"
-            activeStyle={{ textDecoration: 'underline' }}
             className={`nav-calculator ${
-              splitLocation[1] === 'analysis' ? 'nav-underline' : ''
+              splitLocation[1] === 'calculator' ||
+              splitLocation[1] === 'analysis'
+                ? 'nav-border'
+                : ''
             }`}
           >
             Calculator
