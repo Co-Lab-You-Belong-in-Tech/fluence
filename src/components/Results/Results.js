@@ -1,7 +1,7 @@
-import instagram from './instagram.svg';
-import kenna from './kenna.svg';
+import instagram from '../../assets/instagram.svg';
+import kenna from '../../assets/kenna.svg';
 
-const Analysis = () => (
+const Results = () => (
   <section className="analysis wrapper">
     <div className="analysis-left">
       <div className="analysis-image">
@@ -58,4 +58,4 @@ const Analysis = () => (
   </section>
 );
 
-export default Analysis;
+export default Results;

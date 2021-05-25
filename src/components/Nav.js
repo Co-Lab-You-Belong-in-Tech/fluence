@@ -1,13 +1,13 @@
 import { useLocation, NavLink } from 'react-router-dom';
-import logo from './logo.svg';
+import logo from '../assets/logo.svg';
 
 const Nav = () => {
   // assigning location variable
-  const location = useLocation();
+  const path = useLocation();
   // destructuring pathname from location
-  const { pathname } = location;
+  const { pathname } = path;
   // JavaScript split method to get the name of the path in array
-  const splitLocation = pathname.split('/');
+  const location = pathname.split('/');
 
   return (
     <nav className="wrapper">
@@ -21,8 +21,7 @@ const Nav = () => {
           <NavLink
             to="/calculator"
             className={`nav-calculator ${
-              splitLocation[1] === 'calculator' ||
-              splitLocation[1] === 'analysis'
+              location[1] === 'calculator' || location[1] === 'results'
                 ? 'nav-border'
                 : ''
             }`}
