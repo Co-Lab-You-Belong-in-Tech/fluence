@@ -98,7 +98,8 @@ header p {
 header button,
 .cta-section button {
     color: #FAFAFA;
-    background-color: #49627D;
+    /* background-color: #49627D; */
+    background-color: orangered;
     border: 1px solid black;
     border-radius: 5px;
     width: 160px;
