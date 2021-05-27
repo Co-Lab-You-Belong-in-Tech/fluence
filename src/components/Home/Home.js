@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import headerImage from '../../assets/header-image.svg';
+import amico from '../../assets/amico.svg';
 import resume from '../../assets/resume.svg';
 import charts from '../../assets/charts.svg';
 import dashboard from '../../assets/dashboard.svg';
@@ -16,11 +16,11 @@ const Home = () => (
           Get a tailored marketing analysis that provides you with the pricing
           knowledge you need when working with sponsorships and brands.
         </p>
-        <Link to="/calculator">
-          <button type="submit">Get Started</button>
+        <Link to="/calculator" className="get-started">
+          Get Started
         </Link>
       </div>
-      <img src={headerImage} alt="" />
+      <img src={amico} alt="" />
     </header>
     <section className="how-it-works">
       <h2>How it works</h2>
@@ -75,8 +75,8 @@ const Home = () => (
     </section>
     <section className="cta-section wrapper">
       <p>Are you ready to take control of your personal brand?</p>
-      <Link to="/calculator">
-        <button type="submit">Get Started</button>
+      <Link to="/calculator" className="get-started">
+        Get Started
       </Link>
     </section>
     <footer className="wrapper">

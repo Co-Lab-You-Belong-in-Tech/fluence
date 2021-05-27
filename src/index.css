@@ -95,18 +95,18 @@ header p {
     margin: 35px 0 20px;
 }
 
-header button,
-.cta-section button {
-    color: #FAFAFA;
+header .get-started,
+.cta-section .get-started {
     background-color: #49627D;
+    color: #FAFAFA;
     border: 1px solid black;
     border-radius: 5px;
+    display: block;
     width: 160px;
     height: 45px;
-    font-weight: 600;
+    text-align: center;
     line-height: 4.4rem;
     letter-spacing: -0.022em;
-    cursor: pointer;
 }
 
 header img {
@@ -199,8 +199,7 @@ header img {
     margin: 0 230px 40px 230px;
 }
 
-.cta-section button {
-    display: block;
+.cta-section .get-started {
     margin: 0 auto;
 }
 
