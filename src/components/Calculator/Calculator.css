@@ -34,6 +34,7 @@
 
 .calc-form-wrapper {
     padding-right: 50px;
+    font-size: .9em;
 }
 
 .calc-form-wrapper form {
@@ -98,6 +99,7 @@
 .type-list-wrapper {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 
 }
 
@@ -117,12 +119,19 @@
     cursor: pointer;
 }
 
-#analyze-btn {
+.influencer-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.analyze-btn {
     color: white;
     background-color: #49627D;
     border: 1px solid black;
     width: 200px;
     text-align: center;
+    padding: 5px;
 }
 
 input::-webkit-outer-spin-button,

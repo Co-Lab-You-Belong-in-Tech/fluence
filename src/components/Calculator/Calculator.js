@@ -120,9 +120,7 @@ export class Calculator extends Component {
                                         </p>
                                     ))}
                                 </div>
-                                <Link to="/results">
-                                    <div id="analyze-btn">Analyze</div>
-                                </Link>
+                                <Link className="analyze-btn" to={{pathname: '/results', state: {handle: this.state.handle, totalFollowerCount: this.state.totolFollowerCount, totalLikeOnPost: this.state.totalLikeOnPost, totalCommentOnPost: this.state.totalCommentOnPost, influenceType: this.state.influencerType}}} >Analyze</Link>
                             </div>
                         </div>
                     </div>
