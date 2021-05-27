@@ -2,34 +2,34 @@ import instagram from '../../assets/instagram.svg';
 import kenna from '../../assets/kenna.svg';
 
 const Results = () => (
-  <section className="analysis wrapper">
-    <div className="analysis-left">
-      <div className="analysis-image">
+  <section className="results wrapper">
+    <div className="results-left">
+      <div className="results-image">
         {/* update alt text dynamically */}
         <img src={kenna} alt="kenna" />
         <p>@userhandle</p>
       </div>
-      <div className="analysis-metrics">
-        <div className="analysis-metrics-container">
+      <div className="results-metrics">
+        <div className="results-metrics-container">
           <p>12k</p>
           <p># of Followers</p>
         </div>
-        <div className="analysis-metrics-container">
+        <div className="results-metrics-container">
           <p>3.7%</p>
           <p>Eng. Rate</p>
         </div>
-        <div className="analysis-metrics-container">
+        <div className="results-metrics-container">
           <p>$.43</p>
           <p>CPE</p>
         </div>
       </div>
     </div>
-    <div className="analysis-right">
-      <div className="analysis-heading">
+    <div className="results-right">
+      <div className="results-heading">
         <img src={instagram} alt="instagram logo" />
         <h3>Pricing Rate Estimate</h3>
       </div>
-      <div className="analysis-pricing">
+      <div className="results-pricing">
         <div>
           <p>$100 - $150</p>
           <p>Post</p>
@@ -43,7 +43,7 @@ const Results = () => (
           <p>Story</p>
         </div>
       </div>
-      <div className="analysis-description">
+      <div className="results-description">
         <h4>The Breakdown</h4>
         <p>
           The pricing provided is affected by various algorithms based on

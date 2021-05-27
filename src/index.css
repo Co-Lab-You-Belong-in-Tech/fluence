@@ -15,7 +15,7 @@ html {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: b
 
 /* VARIABLES */
 :root {
-    /* --black: #333; */
+    --black: #333;
     --font-family-inter: 'Inter', sans-serif;
     --font-fmaily-pacifico: 'Pacifico', cursive;
 }
@@ -75,69 +75,138 @@ nav .nav-border {
 
 /* HEADER STYLES */
 header {
-    /* border: 2px solid #ffc600; */
-    font-weight: 600;
-    letter-spacing: -0.022em;
-    text-align: center;
-    width: 735px;
-    margin: 111px auto 0;
+    background-color: #FFF7E6;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.16);
+    border-radius: 23px;
+    display: flex;
 }
 
 header h1 {
-    font-size: 5rem;
-    line-height: 8rem;
-    margin-bottom: 10px;
-}
-
-header p {
-    font-size: 2.5rem;
-    line-height: 4.4rem;
-    margin-bottom: 60px;
-}
-
-header input,
-header button {
-    border: 1px solid black;
-    border-radius: 5px;
-    height: 56px;
-}
-
-header input {
-    width: 378px;
-    margin-right: 20px;
-    padding-left: 20px;
-    outline: none;
-}
-
-header button {
-    width: 155px;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-header button + p {
-    font-size: 2rem;
-    margin-right: 170px;
-}
-
-/* HOWITWORKS STYLES */
-.how-it-works {
-    background-color: #eaecf0;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 12px 12px 0 0;
-}
-
-.how-it-works-text h2 {
-    font-size: 4rem;
-    font-weight: 600;
-    line-height: 8rem;
+    font-size: 7.5rem;
+    line-height: 6.5rem;
     letter-spacing: -0.022em;
 }
 
-.how-it-works-text p {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    color: black;
+header p {
+    font-weight: normal;
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    letter-spacing: -0.022em;
+    margin: 35px 0 20px;
+}
+
+header button,
+.cta-section button {
+    color: #FAFAFA;
+    background-color: #49627D;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 160px;
+    height: 45px;
+    font-weight: 600;
+    line-height: 4.4rem;
+    letter-spacing: -0.022em;
+    cursor: pointer;
+}
+
+header img {
+    margin: 275px 15px 35px 0;
+}
+
+.header-text {
+    margin: 120px 0 0 40px;
+}
+
+.how-it-works h2 {
+    font-size: 6rem;
+    line-height: 6.5rem;
+    letter-spacing: -0.022em;
+    text-align: center;
+    margin: 70px 0 25px;
+}
+
+.how-it-works .how-it-works-section {
+    background-color: #DCE8DD;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.16);
+    padding: 25px 0 50px;
+}
+
+.how-it-works .how-it-works-container {
+    display: flex;
+}
+
+.how-it-works .how-it-works-container div:nth-child(2) {
+    margin: 0 100px;
+}
+
+.how-it-works .how-it-works-details p {
+    line-height: 2.4rem;
+    letter-spacing: -0.011em;
+    color: var(--black);
+    margin-top: 40px;
+}
+
+.explainer {
+    margin: 75px 200px;
+}
+
+.explainer .explainer-section {
+    display: flex;
+}
+
+.explainer .explainer-section-first .explainer-description {
+    margin: 125px 0 0 100px;
+}
+
+.explainer .explainer-description h3 {
+    font-size: 4rem;
+    line-height: 6.5rem;
+    letter-spacing: -0.022em;
+    margin-bottom: 35px;
+}
+
+.explainer .explainer-description p {
+    font-weight: normal;
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    letter-spacing: -0.011em;
+    color: var(--black);
+}
+
+.explainer .explainer-section-second {
+    margin-top: 100px;
+}
+
+.explainer .explainer-section-second .explainer-description {
+    margin: 100px 100px 0 0;
+}
+
+.explainer .explainer-section-second h3 {
+    line-height: 5.1rem;
+}
+
+.cta-section {
+    background-color: #EDEBE7;
+    border-radius: 23px;
+    padding: 55px 0;
+}
+
+.cta-section p {
+    font-size: 5rem;
+    line-height: 6.5rem;
+    letter-spacing: -0.022em;
+    text-align: center;
+    margin: 0 230px 40px 230px;
+}
+
+.cta-section button {
+    display: block;
+    margin: 0 auto;
+}
+
+footer img {
+    display: block;
+    margin: 45px auto;
 }
 
 /* CALCULATOR STYLES */
@@ -154,8 +223,8 @@ header button + p {
     cursor: pointer;
 }
 
-/* ANALYSIS STYLES */
-.analysis {
+/* RESULTS STYLES */
+.results {
     background-color: #EEF1F8;
     border-radius: 23px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -165,28 +234,28 @@ header button + p {
     padding: 75px 85px 80px 55px;
 }
 
-.analysis .analysis-right {
+.results .results-right {
     margin-left: 60px;
 }
 
-.analysis .analysis-image {
+.results .results-image {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.analysis .analysis-image p {
+.results .results-image p {
     font-size: 4rem;
     letter-spacing: -0.022em;
     margin-top: 35px;
 }
 
-.analysis .analysis-metrics {
+.results .results-metrics {
     display: flex;
     margin-top: 60px;
 }
 
-.analysis .analysis-metrics-container {
+.results .results-metrics-container {
     background-color: #FAFAFA;
     border: 1px solid black;
     width: 115px;
@@ -199,68 +268,68 @@ header button + p {
     margin-right: 50px;
 }
 
-.analysis .analysis-metrics div:last-child {
+.results .results-metrics div:last-child {
     margin: 0;
 }
 
-.analysis .analysis-metrics-container p {
+.results .results-metrics-container p {
     font-family: var(--font-family-inter);
     font-weight: 500;
     font-size: 3.7rem;
     letter-spacing: -0.011em;
 }
 
-.analysis .analysis-metrics-container p:last-child {
+.results .results-metrics-container p:last-child {
     font-size: 1.2rem;
     margin-top: 10px;
 }
 
-.analysis .analysis-heading {
+.results .results-heading {
     display: flex;
     align-items: center;
     margin-top: 40px;
 }
 
-.analysis .analysis-heading h3 {
+.results .results-heading h3 {
     font-family: var(--font-family-inter);
     font-size: 3.5rem;
     letter-spacing: -0.011em;
     margin-left: 30px;
 }
 
-.analysis .analysis-pricing {
+.results .results-pricing {
     display: flex;
     margin: 40px 0 80px;
 }
 
-.analysis .analysis-pricing div {
+.results .results-pricing div {
     border-right: 3px solid #1F1B1B;
     text-align: center;
     padding-right: 30px;
     margin-right: 20px;
 }
 
-.analysis .analysis-pricing div:last-child {
+.results .results-pricing div:last-child {
     border: 0;
     margin: 0;
     padding: 0;
 }
 
-.analysis .analysis-pricing p {
+.results .results-pricing p {
     font-size: 3rem;
     line-height: 4.8rem;
     letter-spacing: -0.022em;
 }
 
-.analysis .analysis-description h4 {
+.results .results-description h4 {
     font-size: 3rem;
     letter-spacing: -0.011em;
     margin-bottom: 40px;
 }
 
-.analysis .analysis-description p {
+.results .results-description p {
     letter-spacing: -0.011em;
-    color: #333;
+    color: var(--black);
 }
 
 /* NOTFOUND STYLES */

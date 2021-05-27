@@ -14,7 +14,7 @@ const Nav = () => {
       <ul>
         <li>
           <NavLink to="/">
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="fluence logo" />
           </NavLink>
         </li>
         <li>
