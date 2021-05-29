@@ -1,5 +1,6 @@
 import instagram from '../../assets/instagram.svg';
 import kenna from '../../assets/kenna.svg';
+import './Results.css';
 
 const Results = () => (
   <section className="results wrapper">

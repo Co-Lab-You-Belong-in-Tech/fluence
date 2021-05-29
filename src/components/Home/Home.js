@@ -6,6 +6,7 @@ import dashboard from '../../assets/dashboard.svg';
 import cuate from '../../assets/cuate.svg';
 import pana from '../../assets/pana.svg';
 import logo from '../../assets/logo.svg';
+import './Home.css';
 
 const Home = () => (
   <>

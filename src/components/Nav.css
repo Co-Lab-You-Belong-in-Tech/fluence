@@ -1,0 +1,19 @@
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 30px;
+}
+
+nav .nav-calculator {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.7rem;
+    font-weight: normal;
+    line-height: 0;
+    letter-spacing: 0.008em;
+    color: black;
+}
+
+nav .nav-border {
+    border-bottom: 3px solid #2B3D51;
+}

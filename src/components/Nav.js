@@ -1,5 +1,6 @@
 import { useLocation, NavLink } from 'react-router-dom';
 import logo from '../assets/logo.svg';
+import './Nav.css';
 
 const Nav = () => {
   // assigning location variable

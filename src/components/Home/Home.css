@@ -1,0 +1,133 @@
+header {
+    background-color: #FFF7E6;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.16);
+    border-radius: 23px;
+    display: flex;
+}
+
+header h1 {
+    font-size: 7.5rem;
+    line-height: 6.5rem;
+    letter-spacing: -0.022em;
+}
+
+header p {
+    font-weight: normal;
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    letter-spacing: -0.022em;
+    margin: 35px 0 20px;
+}
+
+header .get-started,
+.cta-section .get-started {
+    background-color: #49627D;
+    color: #FAFAFA;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: block;
+    width: 160px;
+    height: 45px;
+    text-align: center;
+    line-height: 4.4rem;
+    letter-spacing: -0.022em;
+}
+
+header img {
+    margin: 275px 15px 35px 0;
+}
+
+.header-text {
+    margin: 120px 0 0 40px;
+}
+
+.how-it-works h2 {
+    font-size: 6rem;
+    line-height: 6.5rem;
+    letter-spacing: -0.022em;
+    text-align: center;
+    margin: 70px 0 25px;
+}
+
+.how-it-works .how-it-works-section {
+    background-color: #DCE8DD;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.16);
+    padding: 25px 0 50px;
+}
+
+.how-it-works .how-it-works-container {
+    display: flex;
+}
+
+.how-it-works .how-it-works-container div:nth-child(2) {
+    margin: 0 100px;
+}
+
+.how-it-works .how-it-works-details p {
+    line-height: 2.4rem;
+    letter-spacing: -0.011em;
+    color: var(--black);
+    margin-top: 40px;
+}
+
+.explainer {
+    margin: 75px 200px;
+}
+
+.explainer .explainer-section {
+    display: flex;
+}
+
+.explainer .explainer-section-first .explainer-description {
+    margin: 125px 0 0 100px;
+}
+
+.explainer .explainer-description h3 {
+    font-size: 4rem;
+    line-height: 6.5rem;
+    letter-spacing: -0.022em;
+    margin-bottom: 35px;
+}
+
+.explainer .explainer-description p {
+    font-weight: normal;
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    letter-spacing: -0.011em;
+    color: var(--black);
+}
+
+.explainer .explainer-section-second {
+    margin-top: 100px;
+}
+
+.explainer .explainer-section-second .explainer-description {
+    margin: 100px 100px 0 0;
+}
+
+.explainer .explainer-section-second h3 {
+    line-height: 5.1rem;
+}
+
+.cta-section {
+    background-color: #EDEBE7;
+    border-radius: 23px;
+    padding: 55px 0;
+}
+
+.cta-section p {
+    font-size: 5rem;
+    line-height: 6.5rem;
+    letter-spacing: -0.022em;
+    text-align: center;
+    margin: 0 230px 40px 230px;
+}
+
+.cta-section .get-started {
+    margin: 0 auto;
+}
+
+footer img {
+    display: block;
+    margin: 45px auto;
+}
