@@ -7,7 +7,7 @@ import tiktokIcon from '../../assets/tiktokIcon.svg';
 import "./Calculator.css"
 
 
-export class Calculator extends Component {
+class Calculator extends Component {
 
     constructor(props){
         super(props);
