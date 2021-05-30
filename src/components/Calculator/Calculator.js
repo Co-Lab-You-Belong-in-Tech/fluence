@@ -32,8 +32,8 @@ class Calculator extends Component {
     }
 
     handleClick = (type) => {
-        console.log(type);
-        this.setState({influenceTypeList: type});
+        console.log(type.type);
+        this.setState({influencerType: type.type});
     }
 
     render() {
