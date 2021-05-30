@@ -8,10 +8,10 @@ const Results = () => {
   const likes = parseFloat(location.state.totalLikeOnPost);
   const comments = parseFloat(location.state.totalCommentOnPost);
   const followers = parseFloat(location.state.totalFollowerCount);
-  const { influenceType } = location.state;
+  const { handle, influenceType } = location.state;
   const cpe = 0.28;
   const cpm = 0.223;
-  let storyReachPercent = 0;
+  let storyReachPercent;
 
   switch (true) {
     case followers > 2000 && followers <= 5000:
@@ -49,7 +49,7 @@ const Results = () => {
         <div className="results-image">
           {/* update alt text dynamically */}
           <img src={kenna} alt="kenna" />
-          <p>@userhandle</p>
+          <p>{handle}</p>
         </div>
         <div className="results-metrics">
           <div className="results-metrics-container">

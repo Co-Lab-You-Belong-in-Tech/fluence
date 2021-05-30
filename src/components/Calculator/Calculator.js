@@ -32,12 +32,10 @@ class Calculator extends Component {
     }
 
     handleClick = (type) => {
-        console.log(type.type);
         this.setState({influencerType: type.type});
     }
 
     render() {
-        console.log(this.state.influencerType)
         const influenceTypeList =["Beauty", "Blogger/Vlogger", "Fashion", "Game", "Photography", "Sport/Fitness", "Tech/Gadget", "Travel"];
         return (
             <section className="calc-container">
@@ -61,7 +59,7 @@ class Calculator extends Component {
                                         name="handle"
                                         type="text"
                                         placeholder="@"
-                                        value={this.state.handle == "@" ? "" : this.state.handle}
+                                        value={this.state.handle == "@" ? "@" : this.state.handle}
                                         onChange={this.handleInputChange}
                                     />
                                 </label>
