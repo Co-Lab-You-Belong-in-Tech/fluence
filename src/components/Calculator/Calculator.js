@@ -59,7 +59,7 @@ class Calculator extends Component {
                                     Social Medial Handle
                                     <input
                                         name="handle"
-                                        type="number"
+                                        type="text"
                                         placeholder="@"
                                         value={this.state.handle == "@" ? "" : this.state.handle}
                                         onChange={this.handleInputChange}
