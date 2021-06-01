@@ -39,6 +39,7 @@ const Results = () => {
       storyReachPercent = 0;
   }
 
+  const engRate = ((likes + comments) / followers) * 100;
   const postPrice = (likes + comments) * cpe;
   const storyPrice = (followers * (storyReachPercent / 100) * cpm) / 50;
   const videoPrice = postPrice * 1.75;
@@ -57,7 +58,7 @@ const Results = () => {
             <p># of Followers</p>
           </div>
           <div className="results-metrics-container">
-            <p>3.7%</p>
+            <p>{engRate.toFixed(1)}%</p>
             <p>Eng. Rate</p>
           </div>
           <div className="results-metrics-container">
