@@ -50,7 +50,7 @@ const Results = () => {
         <div className="results-image">
           {/* update alt text dynamically */}
           <img src={kenna} alt="kenna" />
-          <p>{handle}</p>
+          <p>{handle === '@' ? '@userhandle' : handle}</p>
         </div>
         <div className="results-metrics">
           <div className="results-metrics-container">
@@ -58,7 +58,7 @@ const Results = () => {
             <p># of Followers</p>
           </div>
           <div className="results-metrics-container">
-            <p>{engRate.toFixed(1)}%</p>
+            <p>{Number.isNaN(engRate) ? 0 : engRate.toFixed(1)}%</p>
             <p>Eng. Rate</p>
           </div>
           <div className="results-metrics-container">
