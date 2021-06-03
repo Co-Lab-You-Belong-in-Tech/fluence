@@ -50,7 +50,7 @@ const Results = () => {
         <div className="results-image">
           {/* update alt text dynamically */}
           <img src={kenna} alt="kenna" />
-          <p>{handle === '@' ? '@userhandle' : handle}</p>
+          <p>{handle === '' ? '@userhandle' : `@${handle}`}</p>
         </div>
         <div className="results-metrics">
           <div className="results-metrics-container">

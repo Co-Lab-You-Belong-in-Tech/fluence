@@ -12,12 +12,17 @@ class Calculator extends Component {
     constructor(props){
         super(props);
         this.state = {
-            handle: "@",
-            totolFollowerCount: 0,
+            handle: "",
+            totalFollowerCount: 0,
             totalCommentOnPost: 0,
             totalLikeOnPost: 0,
-            influencerType: ""
-        }
+            influencerType: "+Others",
+
+            userHandleError: "",
+            totalFollowerCountError: "",
+            totalCommentOnPostError: "",
+            totalLikeOnPostError: "",
+        };
         this.handleInputChange = this.handleInputChange.bind(this);
     }
 
@@ -31,12 +36,65 @@ class Calculator extends Component {
         });
     }
 
-    handleClick = (type) => {
+    validate = () => {
+        let userHandleError = "";
+        let totalFollowerCountError = "";
+        let totalCommentOnPostError = "";
+        let totalLikeOnPostError = "";
+
+        this.setState({userHandleError: ""})
+        this.setState({totalFollowerCountError: ""})
+        this.setState({totalCommentOnPostError: ""})
+        this.setState({totalLikeOnPostError: ""})
+
+        if (this.state.handle == "") {
+            userHandleError = 'handle is empty!'
+        } else if (this.state.totalFollowerCount < 1) {
+            totalFollowerCountError = 'This field is empty!'
+        } else if (this.state.totalCommentOnPost < 1) {
+            totalCommentOnPostError = 'This field is empty!'
+        } else if (this.state.totalLikeOnPost < 1) {
+            totalLikeOnPostError = 'This field is empty!'
+        };
+
+
+        if (userHandleError) {
+            this.setState({userHandleError})
+            return false
+        } else if (totalFollowerCountError) {
+            this.setState({totalFollowerCountError})
+            return false
+        } else if (totalCommentOnPostError) {
+            this.setState({totalCommentOnPostError})
+            return false
+        } else if (totalLikeOnPostError) {
+            this.setState({totalLikeOnPostError})
+            return false
+        };
+
+        return true
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const isValid = this.validate();
+        if (isValid) {
+            console.log()
+        }
+    }
+
+    // handleSubmitValidation() {
+    //     if (this.state.handle == '' || this.state.totalFollowerCount < 1 || this.state.totalLikeOnPost < 1 || this.state.totalFollowerCount < 1 || this.state.influencerType == "") {
+    //         alert("Some fields are empty")
+    //     }
+    // }
+
+    handleInfluencerTypeSelection = (type) => {
         this.setState({influencerType: type.type});
     }
 
     render() {
-        const influenceTypeList =["Beauty", "Blogger/Vlogger", "Fashion", "Game", "Photography", "Sport/Fitness", "Tech/Gadget", "Travel"];
+        const influenceTypeList =["Beauty", "Blogger/Vlogger", "Fashion", "Game", "Photography", "Sport/Fitness", "Tech/Gadget", "Travel", "+Others"];
         return (
             <section className="calc-container">
                 <div className="calc-left-wrapper">
@@ -52,27 +110,29 @@ class Calculator extends Component {
                     <p>Enter your social media information below to get a report that  estimates your pricing rates when monetizing your content.</p>
                     <div className="calc-wrapper">
                         <div className="calc-form-wrapper">
-                            <form>
+                            <form onSubmit={this.handleSubmit}>
                                 <label>
                                     Social Medial Handle
                                     <input
                                         name="handle"
-                                        type="text"
+                                        type="text" required
                                         placeholder="@"
-                                        value={this.state.handle == "@" ? "@" : this.state.handle}
+                                        value={this.state.handle == "" ? "" : this.state.handle}
                                         onChange={this.handleInputChange}
                                     />
+                                    <div style={{fontSize: 15, color: "red"}}>{this.state.userHandleError}</div>
                                 </label>
 
                                 <label>
                                     Total Follower Count
                                     <input
-                                        name="totolFollowerCount"
+                                        name="totalFollowerCount"
                                         type="number"
                                         placeholder="Total Follower"
-                                        value={this.state.totolFollowerCount == 0 ? "" : this.state.totolFollowerCount}
+                                        value={this.state.totalFollowerCount == 0 ? "" : this.state.totalFollowerCount}
                                         onChange={this.handleInputChange}
                                     />
+                                    <div style={{fontSize: 15, color: "red"}}>{this.state.totalFollowerCountError}</div>
                                 </label>
 
                                 <label>
@@ -84,6 +144,7 @@ class Calculator extends Component {
                                         value={this.state.totalCommentOnPost == 0 ? "" : this.state.totalCommentOnPost}
                                         onChange={this.handleInputChange}
                                     />
+                                    <div style={{fontSize: 15, color: "red"}}>{this.state.totalCommentOnPostError}</div>
                                 </label>
 
                                 <label>
@@ -95,6 +156,7 @@ class Calculator extends Component {
                                         value={this.state.totalLikeOnPost == 0 ? "" : this.state.totalLikeOnPost}
                                         onChange={this.handleInputChange}
                                     />
+                                    <div style={{fontSize: 15, color: "red"}}>{this.state.totalLikeOnPostError}</div>
                                 </label>
                             </form>
                         </div>
@@ -113,15 +175,19 @@ class Calculator extends Component {
                                         <p 
                                             className="influence-type-tag"
                                             key={i}
-                                            onClick = {() => {this.handleClick({type})}}
+                                            onClick = {() => {this.handleInfluencerTypeSelection({type})}}
                                         >{type}
                                         </p>
                                     ))}
                                 </div>
-                                <Link className="analyze-btn" to={{pathname: '/results', state: {handle: this.state.handle, totalFollowerCount: this.state.totolFollowerCount, totalLikeOnPost: this.state.totalLikeOnPost, totalCommentOnPost: this.state.totalCommentOnPost, influenceType: this.state.influencerType}}} >Analyze</Link>
                             </div>
                         </div>
                     </div>
+                    <Link 
+                    // onClick={this.handleSubmit}
+                    // type="submit"
+                    className="analyze-btn" 
+                    to={{pathname: '/results', state: {handle: this.state.handle, totalFollowerCount: this.state.totalFollowerCount, totalLikeOnPost: this.state.totalLikeOnPost, totalCommentOnPost: this.state.totalCommentOnPost, influenceType: this.state.influencerType}}} >Analyze</Link>
                 </div>
             </section>
         )
