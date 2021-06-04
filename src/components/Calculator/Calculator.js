@@ -184,7 +184,7 @@ class Calculator extends Component {
                         </div>
                     </div>
                     <Link 
-                    onClick={this.handleSubmit}
+                    // onClick={this.handleSubmit}
                     // type="submit"
                     className="analyze-btn" 
                     to={{pathname: '/results', state: {handle: this.state.handle, totalFollowerCount: this.state.totalFollowerCount, totalLikeOnPost: this.state.totalLikeOnPost, totalCommentOnPost: this.state.totalCommentOnPost, influenceType: this.state.influencerType}}} >Calculate</Link>
