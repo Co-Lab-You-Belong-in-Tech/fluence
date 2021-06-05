@@ -48,13 +48,13 @@ class Calculator extends Component {
         this.setState({totalLikeOnPostError: ""})
 
         if (this.state.handle == "") {
-            userHandleError = 'handle is empty!'
+            userHandleError = 'Require Field!'
         } else if (this.state.totalFollowerCount < 1) {
-            totalFollowerCountError = 'This field is empty!'
+            totalFollowerCountError = 'Require Field!'
         } else if (this.state.totalCommentOnPost < 1) {
-            totalCommentOnPostError = 'This field is empty!'
+            totalCommentOnPostError = 'Require Field!'
         } else if (this.state.totalLikeOnPost < 1) {
-            totalLikeOnPostError = 'This field is empty!'
+            totalLikeOnPostError = 'Require Field!'
         };
 
 
@@ -96,7 +96,7 @@ class Calculator extends Component {
     render() {
         const influenceTypeList =["Beauty", "Blogger/Vlogger", "Fashion", "Game", "Photography", "Sport/Fitness", "Tech/Gadget", "Travel", "+Others"];
         return (
-            <section className="calc-container">
+            <section className="calc-container wrapper">
                 <div className="calc-left-wrapper">
                     <img className="social-img" src={social} alt="social" />
                     <h2>Why Fluence</h2>
@@ -106,8 +106,8 @@ class Calculator extends Component {
                 </div>
 
                 <div className="calc-right-wrapper">
-                    <h1>Creator's Calculator</h1>
-                    <p>Enter your social media information below to get a report that  estimates your pricing rates when monetizing your content.</p>
+                    <h2>Creator's Calculator</h2>
+                    <p className="form-description">Enter your social media information below to get a report that  estimates your pricing rates when monetizing your content.</p>
                     <div className="calc-wrapper">
                         <div className="calc-form-wrapper">
                             <form onSubmit={this.handleSubmit}>
@@ -120,7 +120,7 @@ class Calculator extends Component {
                                         value={this.state.handle == "" ? "" : this.state.handle}
                                         onChange={this.handleInputChange}
                                     />
-                                    <div style={{fontSize: 15, color: "red"}}>{this.state.userHandleError}</div>
+                                    <div className="warning-label">{this.state.userHandleError}</div>
                                 </label>
 
                                 <label>
@@ -132,7 +132,7 @@ class Calculator extends Component {
                                         value={this.state.totalFollowerCount == 0 ? "" : this.state.totalFollowerCount}
                                         onChange={this.handleInputChange}
                                     />
-                                    <div style={{fontSize: 15, color: "red"}}>{this.state.totalFollowerCountError}</div>
+                                    <div className="warning-label">{this.state.totalFollowerCountError}</div>
                                 </label>
 
                                 <label>
@@ -144,7 +144,7 @@ class Calculator extends Component {
                                         value={this.state.totalCommentOnPost == 0 ? "" : this.state.totalCommentOnPost}
                                         onChange={this.handleInputChange}
                                     />
-                                    <div style={{fontSize: 15, color: "red"}}>{this.state.totalCommentOnPostError}</div>
+                                    <div className="warning-label">{this.state.totalCommentOnPostError}</div>
                                 </label>
 
                                 <label>
@@ -156,7 +156,7 @@ class Calculator extends Component {
                                         value={this.state.totalLikeOnPost == 0 ? "" : this.state.totalLikeOnPost}
                                         onChange={this.handleInputChange}
                                     />
-                                    <div style={{fontSize: 15, color: "red"}}>{this.state.totalLikeOnPostError}</div>
+                                    <div className="warning-label">{this.state.totalLikeOnPostError}</div>
                                 </label>
                             </form>
                         </div>
@@ -187,7 +187,7 @@ class Calculator extends Component {
                     // onClick={this.handleSubmit}
                     // type="submit"
                     className="analyze-btn" 
-                    to={{pathname: '/results', state: {handle: this.state.handle, totalFollowerCount: this.state.totalFollowerCount, totalLikeOnPost: this.state.totalLikeOnPost, totalCommentOnPost: this.state.totalCommentOnPost, influenceType: this.state.influencerType}}} >Analyze</Link>
+                    to={{pathname: '/results', state: {handle: this.state.handle, totalFollowerCount: this.state.totalFollowerCount, totalLikeOnPost: this.state.totalLikeOnPost, totalCommentOnPost: this.state.totalCommentOnPost, influenceType: this.state.influencerType}}} >Calculate</Link>
                 </div>
             </section>
         )
