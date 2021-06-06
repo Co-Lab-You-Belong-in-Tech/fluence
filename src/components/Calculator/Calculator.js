@@ -112,7 +112,7 @@ class Calculator extends Component {
                         <div className="calc-form-wrapper">
                             <form onSubmit={this.handleSubmit}>
                                 <label>
-                                    Social Medial Handle
+                                    Social Media Handle
                                     <input
                                         name="handle"
                                         type="text" required

@@ -1,12 +1,16 @@
 import { Link } from 'react-router-dom';
 import hero from '../../assets/hero.svg';
 import heroTablet from '../../assets/hero-tablet.svg';
+import heroMobile from '../../assets/hero-mobile.svg';
 import profile from '../../assets/profile.svg';
 import profileTablet from '../../assets/profile-tablet.svg';
+import profileMobile from '../../assets/profile-mobile.svg';
 import charts from '../../assets/charts.svg';
 import chartsTablet from '../../assets/charts-tablet.svg';
+import chartsMobile from '../../assets/charts-mobile.svg';
 import dashboard from '../../assets/dashboard.svg';
 import dashboardTablet from '../../assets/dashboard-tablet.svg';
+import dashboardMobile from '../../assets/dashboard-mobile.svg';
 import cuate from '../../assets/cuate.svg';
 import cuateTablet from '../../assets/cuate-tablet.svg';
 import pana from '../../assets/pana.svg';
@@ -29,6 +33,7 @@ const Home = () => (
         </Link>
       </div>
       <picture>
+        <source srcSet={heroMobile} media="(max-width: 550px)" />
         <source srcSet={heroTablet} media="(max-width: 1260px)" />
         <img src={hero} alt="" />
       </picture>
@@ -41,6 +46,7 @@ const Home = () => (
           <div className="how-it-works-container wrapper">
             <div className="how-it-works-details">
               <picture>
+                <source srcSet={profileMobile} media="(max-width: 550px)" />
                 <source srcSet={profileTablet} media="(max-width: 1260px)" />
                 <img src={profile} alt="" />
               </picture>
@@ -51,6 +57,7 @@ const Home = () => (
             </div>
             <div className="how-it-works-details">
               <picture>
+                <source srcSet={chartsMobile} media="(max-width: 550px)" />
                 <source srcSet={chartsTablet} media="(max-width: 1260px)" />
                 <img src={charts} alt="" />
               </picture>
@@ -61,6 +68,7 @@ const Home = () => (
             </div>
             <div className="how-it-works-details">
               <picture>
+                <source srcSet={dashboardMobile} media="(max-width: 550px)" />
                 <source srcSet={dashboardTablet} media="(max-width: 1260px)" />
                 <img src={dashboard} alt="" />
               </picture>
