@@ -2,7 +2,7 @@ nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 30px;
+    margin: 10px 0;
 }
 
 nav li:first-child {
@@ -25,11 +25,5 @@ nav .nav-border {
 @media (max-width: 1260px) {
     nav .nav-calculator {
         font-size: 1.6rem;
-    }
-}
-
-@media (max-width: 550px) {
-    nav ul {
-        margin: 10px 0;
     }
 }

@@ -32,7 +32,6 @@ header .get-started,
     border-radius: 5px;
     display: block;
     width: 160px;
-    height: 45px;
     text-align: center;
     line-height: 4.4rem;
     letter-spacing: -0.022em;
@@ -265,6 +264,11 @@ footer img {
         margin: 0 100px 20px 100px;
     }
 
+    .cta-section .get-started {
+        font-size: 1.4rem;
+        width: 140px;
+    }
+
     /* FOOTER STYLES */
     footer img {
         margin: 20px auto 10px;
@@ -340,5 +344,32 @@ footer img {
         font-size: 1.3rem;
         line-height: 1.8rem;
         margin: 0;
+    }
+
+    /* FEATURES STYLES */
+    .features {
+        flex-wrap: wrap;
+    }
+
+    .features .features-description h3 {
+        font-size: 1.6rem;
+        line-height: 2rem;
+        padding: 0 25px;
+    }
+
+    .features .features-description p {
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+        padding: 0 16px;
+    }
+
+    .features .features-section-second {
+        margin-top: 0;
+    }
+
+    /* CTA STYLES */
+    .cta-section p {
+        font-size: 1.6rem;
+        margin: 0 25px 10px;
     }
 }
