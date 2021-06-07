@@ -5,6 +5,7 @@ import social from '../../assets/social.svg';
 import instaIcon from '../../assets/instaIcon.svg';
 import tiktokIcon from '../../assets/tiktokIcon.svg';
 import "./Calculator.css"
+import "../../index.css"
 
 
 class Calculator extends Component {
@@ -94,17 +95,9 @@ class Calculator extends Component {
     }
 
     render() {
-        const influenceTypeList =["Beauty", "Blogger/Vlogger", "Fashion", "Game", "Photography", "Sport/Fitness", "Tech/Gadget", "Travel", "+Others"];
+        const influenceTypeList =["Beauty", "Blogger/Vlogger", "Fashion", "Gamer", "Parenting", "Photography", "Sport/Fitness", "Tech/Gadget", "Travel", "+Others"];
         return (
             <section className="calc-container wrapper">
-                <div className="calc-left-wrapper">
-                    <img className="social-img" src={social} alt="social" />
-                    <h2>Why Fluence</h2>
-                    <p>
-                        Spend less time researching what you should be making when collaborating with brands and more time doing what you love - creating content.
-                    </p>
-                </div>
-
                 <div className="calc-right-wrapper">
                     <h2>Creator's Calculator</h2>
                     <p className="form-description">Enter your social media information below to get a report that  estimates your pricing rates when monetizing your content.</p>
@@ -117,7 +110,7 @@ class Calculator extends Component {
                                         name="handle"
                                         type="text" required
                                         placeholder="@"
-                                        value={this.state.handle == "" ? "" : this.state.handle}
+                                        value={this.state.handle == "" ? "@" : this.state.handle}
                                         onChange={this.handleInputChange}
                                     />
                                     <div className="warning-label">{this.state.userHandleError}</div>
@@ -165,16 +158,20 @@ class Calculator extends Component {
                                 <h3>Calculator Type</h3>
                                 <div className="media-icon-list">
                                     <img id="insta-icon" src={instaIcon} />
-                                    <img id="tiktok-icon" src={tiktokIcon} />
+                                    <div className="tiktok-section">
+                                        <img id="tiktok-icon" src={tiktokIcon} />
+                                        <p id="availability-tag">Coming Soon!</p>
+                                    </div>
                                 </div>
                             </div>
                             <div className="influencer-type">
                                 <h3>Influence Type (select one)</h3>
                                 <div className="type-list-wrapper">
-                                    {influenceTypeList.map((type, i) => (
+                                    {influenceTypeList.map((type) => (
                                         <p 
                                             className="influence-type-tag"
-                                            key={i}
+                                            id={this.state.influencerType==type ? "selected" : null}
+                                            key={type}
                                             onClick = {() => {this.handleInfluencerTypeSelection({type})}}
                                         >{type}
                                         </p>
@@ -189,6 +186,14 @@ class Calculator extends Component {
                     className="analyze-btn" 
                     to={{pathname: '/results', state: {handle: this.state.handle, totalFollowerCount: this.state.totalFollowerCount, totalLikeOnPost: this.state.totalLikeOnPost, totalCommentOnPost: this.state.totalCommentOnPost, influenceType: this.state.influencerType}}} >Calculate</Link>
                 </div>
+                <div className="calc-left-wrapper">
+                    <img className="social-img" src={social} alt="social" />
+                    <h2>Why Fluence</h2>
+                    <p>
+                        Spend less time researching what you should be making when collaborating with brands and more time doing what you love - creating content.
+                    </p>
+                </div>
+
             </section>
         )
     }
