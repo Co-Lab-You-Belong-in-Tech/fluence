@@ -52,10 +52,10 @@ class Calculator extends Component {
             userHandleError = 'Require Field!'
         } else if (this.state.totalFollowerCount < 1) {
             totalFollowerCountError = 'Require Field!'
-        } else if (this.state.totalCommentOnPost < 1) {
-            totalCommentOnPostError = 'Require Field!'
         } else if (this.state.totalLikeOnPost < 1) {
             totalLikeOnPostError = 'Require Field!'
+        } else if (this.state.totalCommentOnPost < 1) {
+            totalCommentOnPostError = 'Require Field!'
         };
 
 
@@ -65,11 +65,11 @@ class Calculator extends Component {
         } else if (totalFollowerCountError) {
             this.setState({totalFollowerCountError})
             return false
-        } else if (totalCommentOnPostError) {
-            this.setState({totalCommentOnPostError})
-            return false
         } else if (totalLikeOnPostError) {
             this.setState({totalLikeOnPostError})
+            return false
+        } else if (totalCommentOnPostError) {
+            this.setState({totalCommentOnPostError})
             return false
         };
 
@@ -83,12 +83,6 @@ class Calculator extends Component {
             console.log()
         }
     }
-
-    // handleSubmitValidation() {
-    //     if (this.state.handle == '' || this.state.totalFollowerCount < 1 || this.state.totalLikeOnPost < 1 || this.state.totalFollowerCount < 1 || this.state.influencerType == "") {
-    //         alert("Some fields are empty")
-    //     }
-    // }
 
     handleInfluencerTypeSelection = (type) => {
         this.setState({influencerType: type.type});
@@ -105,7 +99,7 @@ class Calculator extends Component {
                         <div className="calc-form-wrapper">
                             <form onSubmit={this.handleSubmit}>
                                 <label>
-                                    Social Media Handle
+                                    Social Media Handle*
                                     <input
                                         name="handle"
                                         type="text" required
@@ -117,10 +111,10 @@ class Calculator extends Component {
                                 </label>
 
                                 <label>
-                                    Total Follower Count
+                                    Total Follower Count*
                                     <input
                                         name="totalFollowerCount"
-                                        type="number"
+                                        type="number" required
                                         placeholder="Total Follower"
                                         value={this.state.totalFollowerCount == 0 ? "" : this.state.totalFollowerCount}
                                         onChange={this.handleInputChange}
@@ -129,10 +123,22 @@ class Calculator extends Component {
                                 </label>
 
                                 <label>
-                                    # of Comments (Based on last post)
+                                    # of Likes (Based on last post)*
+                                    <input
+                                        name="totalLikeOnPost"
+                                        type="number" required
+                                        placeholder="Number of Likes"
+                                        value={this.state.totalLikeOnPost == 0 ? "" : this.state.totalLikeOnPost}
+                                        onChange={this.handleInputChange}
+                                    />
+                                    <div className="warning-label">{this.state.totalLikeOnPostError}</div>
+                                </label>
+
+                                <label>
+                                    # of Comments (Based on last post)*
                                     <input
                                         name="totalCommentOnPost"
-                                        type="number"
+                                        type="number" required
                                         placeholder="Total Comment"
                                         value={this.state.totalCommentOnPost == 0 ? "" : this.state.totalCommentOnPost}
                                         onChange={this.handleInputChange}
@@ -140,17 +146,6 @@ class Calculator extends Component {
                                     <div className="warning-label">{this.state.totalCommentOnPostError}</div>
                                 </label>
 
-                                <label>
-                                    # of Likes (Based on last post)
-                                    <input
-                                        name="totalLikeOnPost"
-                                        type="number"
-                                        placeholder="Number of Likes"
-                                        value={this.state.totalLikeOnPost == 0 ? "" : this.state.totalLikeOnPost}
-                                        onChange={this.handleInputChange}
-                                    />
-                                    <div className="warning-label">{this.state.totalLikeOnPostError}</div>
-                                </label>
                             </form>
                         </div>
                         <div className="calc-type-wrapper">
@@ -165,7 +160,7 @@ class Calculator extends Component {
                                 </div>
                             </div>
                             <div className="influencer-type">
-                                <h3>Influence Type (select one)</h3>
+                                <h3>Influence Type (select one)*</h3>
                                 <div className="type-list-wrapper">
                                     {influenceTypeList.map((type) => (
                                         <p 
@@ -180,12 +175,17 @@ class Calculator extends Component {
                             </div>
                         </div>
                     </div>
-                    <Link 
-                    // onClick={this.handleSubmit}
-                    // type="submit"
-                    className="analyze-btn" 
-                    to={{pathname: '/results', state: {handle: this.state.handle, totalFollowerCount: this.state.totalFollowerCount, totalLikeOnPost: this.state.totalLikeOnPost, totalCommentOnPost: this.state.totalCommentOnPost, influenceType: this.state.influencerType}}} >Calculate</Link>
+
+                    {this.state.handle && this.state.totalFollowerCount && this.state.totalCommentOnPost && this.state.totalLikeOnPost ? <Link 
+                        // onClick={this.handleSubmit}
+                        type="submit"
+                        className="submit-btn" 
+                        to={{pathname: '/results', state: {handle: this.state.handle, totalFollowerCount: this.state.totalFollowerCount, totalLikeOnPost: this.state.totalLikeOnPost, totalCommentOnPost: this.state.totalCommentOnPost, influenceType: this.state.influencerType}}} >Calculate
+                    </Link> : <button type="submit" onClick={this.handleSubmit} className="submit-btn">Calculate</button>}
+
+
                 </div>
+
                 <div className="calc-left-wrapper">
                     <img className="social-img" src={social} alt="social" />
                     <h2>Why Fluence</h2>
