@@ -10,18 +10,18 @@ html {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: b
 
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 /* VARIABLES */
 :root {
     --black: #333;
-    --font-family-inter: 'Inter', sans-serif;
-    --font-fmaily-pacifico: 'Pacifico', cursive;
+    /* --font-family-inter: 'Inter', sans-serif; */
+    /* --font-fmaily-pacifico: 'Pacifico', cursive; */
 }
 
 /* GENERAL STYLES */
-body, h1, h2, h3, h4, ul, p {
+body, h1, h2, h3, h4, h5, ul, p {
     margin: 0;
     padding: 0;
 }
@@ -35,11 +35,8 @@ body {
     font-size: 2rem;
     font-weight: 600;
     line-height: 4.8rem;
+    /* check */
     color: black;
-}
-
-li {
-    list-style-type: none;
 }
 
 a {

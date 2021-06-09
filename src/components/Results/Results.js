@@ -1,6 +1,8 @@
 import { useLocation } from 'react-router-dom';
-import instagram from '../../assets/instagram.svg';
-import kenna from '../../assets/kenna.svg';
+// import instagram from '../../assets/instagram.svg';
+import fashion from '../../assets/fashion.svg';
+import thumbsUp from '../../assets/thumbs-up.svg';
+import thumbsDown from '../../assets/thumbs-down.svg';
 import './Results.css';
 
 const Results = () => {
@@ -46,61 +48,135 @@ const Results = () => {
 
   return (
     <section className="results wrapper">
-      <div className="results-left">
-        <div className="results-image">
-          {/* update alt text dynamically */}
-          <img src={kenna} alt="kenna" />
-          <p>@{handle === '' ? 'userhandle' : handle.replace(/^[@]+/, '')}</p>
+      <div className="results-top">
+        {/* className */}
+        <div className="results-top-left">
+          <img src={fashion} alt="" />
+          <div className="influencer-type">
+            <h3>Fashion Nano-Influencer</h3>
+          </div>
+          <div className="results-metrics-container">
+            <div className="results-metrics">
+              <div>
+                <p>12k</p>
+                <p>Followers</p>
+              </div>
+            </div>
+            <div className="results-metrics">
+              <div>
+                <p>13.7%</p>
+                <p>Eng. Rate</p>
+              </div>
+            </div>
+            <div className="results-metrics">
+              <div>
+                <p>$.43</p>
+                <p>CPE</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="results-metrics">
-          <div className="results-metrics-container">
-            <p>{followers / 1000}k</p>
-            <p># of Followers</p>
+
+        <div className="results-top-right">
+          <h2>@userhandle</h2>
+          <div className="results-pricing-container">
+            <h3>Instagram Pricing Rate Estimate</h3>
+            <div className="results-pricing">
+              <div>
+                <p>$100 - $150</p>
+                <p>Post</p>
+              </div>
+              <div>
+                <p>$200 - $250</p>
+                <p>Video</p>
+              </div>
+              <div>
+                <p>$100 - $150</p>
+                <p>Story</p>
+              </div>
+            </div>
           </div>
-          <div className="results-metrics-container">
-            <p>{Number.isNaN(engRate) ? 0 : engRate.toFixed(1)}%</p>
-            <p>Eng. Rate</p>
-          </div>
-          <div className="results-metrics-container">
-            <p>${cpe.toString().replace(/^[0]+/, '')}</p>
-            <p>CPE</p>
+          <div className="results-description">
+            <h4>Pricing Rate Breakdown</h4>
+            <p>
+              The pricing rate is affected by various metrics such as industry,
+              total likes and comments, average number of posts, number of
+              followers, engagement rate and cost per engagement. The
+              calculations are estimations you can use to provide pricing
+              details to brands you want to work with but should be used with
+              your own discretion.
+            </p>
           </div>
         </div>
       </div>
-      <div className="results-right">
-        <div className="results-heading">
-          <img src={instagram} alt="instagram logo" />
-          <h3>Pricing Rate Estimate</h3>
-        </div>
-        <div className="results-pricing">
-          <div>
-            <p>${postPrice.toFixed(2)}</p>
-            <p>Post</p>
+
+      <div className="results-theory">
+        <h2>Growing Your Influence</h2>
+        <div className="results-theory-container">
+          <div className="results-content">
+            <img src={thumbsUp} alt="thumbs up" />
+            <div className="thumbs-up">
+              <h5>Theme & Quality Posts</h5>
+              <ul>
+                <li>Stick to one design theme for your feed.</li>
+                <li>Invest in a high quality camera to remove blurriness.</li>
+              </ul>
+              <h5>Understanding Your Demographic Following</h5>
+              <ul>
+                <li>
+                  Keep your followers in mind - age group, gender, interests -
+                  this is important for brands to know that their products will
+                  reach the right audience.
+                </li>
+              </ul>
+              <h5>Instagram Features</h5>
+              <ul>
+                <li>
+                  Brands want to see up-to-date, innovative influencers,
+                  especially in the micro space. Make sure to use Instagram's
+                  latest features!
+                </li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <p>${videoPrice.toFixed(2)}</p>
-            <p>Video</p>
+          <div className="results-content">
+            <img src={thumbsDown} alt="thumbs down" />
+            <div className="thumbs-down">
+              <h5>Sponsored Post Overload</h5>
+              <ul>
+                <li>Brands want to see organic content.</li>
+                <li>
+                  Consider deleting sponsored posts based on the cooldown period
+                  on your influencer contract.
+                </li>
+              </ul>
+              <h5>Overgeneralized Posts</h5>
+              <ul>
+                <li>
+                  Posts that aren't targeting your specific audience may lower
+                  your engagement rate.
+                </li>
+              </ul>
+              <h5>Buying Followers</h5>
+              <ul>
+                <li>
+                  Brands that are able to tell real vs fake followers (plus it
+                  hurts your engagement rate!) and can hurt your credibility.
+                </li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <p>${storyPrice.toFixed(2)}</p>
-            <p>Story</p>
-          </div>
         </div>
-        <div className="results-industry">
-          <h4>Industry</h4>
-          <p>{influenceType || 'none'}</p>
-        </div>
-        <div className="results-description">
-          <h4>The Breakdown</h4>
-          <p>
-            The pricing provided is affected by various algorithms based on
-            metrics such as total likes and comments, average number of posts,
-            number of followers, engagement rate and cost per engagement. The
-            calculations are estimations you can use to provide pricing details
-            to brands you want to work with but should be used with your own
-            discretion.
-          </p>
-        </div>
+      </div>
+
+      <h2>Brands Working with Similar Creators</h2>
+      <div className="brand-names">
+        {/* double words */}
+        <p>Banana Republic</p>
+        <p>Daniel Wellington</p>
+        <p>Vitabird C12</p>
+        <p>IGK Hair</p>
+        <p>Rael</p>
       </div>
     </section>
   );

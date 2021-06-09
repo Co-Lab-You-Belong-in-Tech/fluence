@@ -1,0 +1,126 @@
+.results {
+    background-color: #EEF1F8;
+    border-radius: 23px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    line-height: 2.4rem;
+    display: flex;
+    overflow: scroll;
+    padding: 75px 85px 80px 55px;
+}
+
+.results .results-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.results .results-image p {
+    font-size: 4rem;
+    letter-spacing: -0.022em;
+    margin-top: 35px;
+}
+
+.results .results-metrics {
+    display: flex;
+    margin-top: 60px;
+}
+
+.results .results-metrics-container {
+    background-color: #FAFAFA;
+    border: 1px solid black;
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.results .results-metrics div:last-child {
+    margin: 0;
+}
+
+.results .results-metrics-container p {
+    font-family: var(--font-family-inter);
+    font-weight: 500;
+    font-size: 3.7rem;
+    letter-spacing: -0.011em;
+}
+
+.results .results-metrics-container p:last-child {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.results .results-right {
+    margin-left: 100px;
+}
+
+.results .results-heading {
+    display: flex;
+    align-items: center;
+}
+
+.results .results-heading h3 {
+    font-family: var(--font-family-inter);
+    font-size: 3.5rem;
+    letter-spacing: -0.011em;
+    margin-left: 30px;
+}
+
+.results .results-pricing {
+    display: flex;
+    margin: 40px 0 50px;
+}
+
+.results .results-pricing div {
+    border-right: 3px solid #1F1B1B;
+    text-align: center;
+    padding-right: 30px;
+    margin-right: 20px;
+}
+
+.results .results-pricing div:last-child {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.results .results-pricing p {
+    font-size: 3rem;
+    line-height: 4.8rem;
+    letter-spacing: -0.022em;
+}
+
+.results .results-industry {
+    display: flex;
+}
+
+.results .results-industry p {
+    border: 1px solid #7B7B7B;
+    background: #FFF;
+    border-radius: 45px;
+    font-size: 1.5rem;
+    letter-spacing: -0.022em;
+    padding: 0px 10px;
+}
+
+.results h4 {
+    font-size: 3rem;
+    letter-spacing: -0.011em;
+}
+
+.results .results-industry h4 {
+    margin-right: 40px;
+}
+
+.results .results-description h4 {
+    margin: 50px 0 40px;
+}
+
+.results .results-description p {
+    letter-spacing: -0.011em;
+    color: var(--black);
+}

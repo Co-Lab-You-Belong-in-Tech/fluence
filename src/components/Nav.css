@@ -5,6 +5,10 @@ nav ul {
     margin: 10px 0;
 }
 
+nav li {
+    list-style-type: none;
+}
+
 nav li:first-child {
     padding-top: 15px;
 }
