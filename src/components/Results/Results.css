@@ -83,9 +83,9 @@
 }
 
 .results .results-top-right h2 {
-    width: 300px;
     background-color: var(--background-colour);
     border-radius: 12px;
+    width: 300px;
     box-shadow: var(--box-shadow);
     margin: 20px auto 0;
 }

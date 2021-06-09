@@ -7,44 +7,45 @@ import './Results.css';
 
 const Results = () => {
   const location = useLocation();
-  const likes = parseFloat(location.state.totalLikeOnPost);
-  const comments = parseFloat(location.state.totalCommentOnPost);
-  const followers = parseFloat(location.state.totalFollowerCount);
-  const { handle, influenceType } = location.state;
-  const cpe = 0.28;
-  const cpm = 0.223;
-  let storyReachPercent;
+  console.log(location);
+  //   const likes = parseFloat(location.state.totalLikeOnPost);
+  //   const comments = parseFloat(location.state.totalCommentOnPost);
+  //   const followers = parseFloat(location.state.totalFollowerCount);
+  //   const { handle, influenceType } = location.state;
+  //   const cpe = 0.28;
+  //   const cpm = 0.223;
+  //   let storyReachPercent;
 
-  switch (true) {
-    case followers > 2000 && followers <= 5000:
-      storyReachPercent = 42.1;
-      break;
-    case followers > 5000 && followers <= 10000:
-      storyReachPercent = 35.7;
-      break;
-    case followers > 10000 && followers <= 20000:
-      storyReachPercent = 31;
-      break;
-    case followers > 20000 && followers <= 40000:
-      storyReachPercent = 26.9;
-      break;
-    case followers > 40000 && followers <= 75000:
-      storyReachPercent = 23.5;
-      break;
-    case followers > 75000 && followers <= 100000:
-      storyReachPercent = 21.3;
-      break;
-    case followers > 100000:
-      storyReachPercent = 19.9;
-      break;
-    default:
-      storyReachPercent = 0;
-  }
+  //   switch (true) {
+  //     case followers > 2000 && followers <= 5000:
+  //       storyReachPercent = 42.1;
+  //       break;
+  //     case followers > 5000 && followers <= 10000:
+  //       storyReachPercent = 35.7;
+  //       break;
+  //     case followers > 10000 && followers <= 20000:
+  //       storyReachPercent = 31;
+  //       break;
+  //     case followers > 20000 && followers <= 40000:
+  //       storyReachPercent = 26.9;
+  //       break;
+  //     case followers > 40000 && followers <= 75000:
+  //       storyReachPercent = 23.5;
+  //       break;
+  //     case followers > 75000 && followers <= 100000:
+  //       storyReachPercent = 21.3;
+  //       break;
+  //     case followers > 100000:
+  //       storyReachPercent = 19.9;
+  //       break;
+  //     default:
+  //       storyReachPercent = 0;
+  //   }
 
-  const engRate = ((likes + comments) / followers) * 100;
-  const postPrice = (likes + comments) * cpe;
-  const storyPrice = (followers * (storyReachPercent / 100) * cpm) / 50;
-  const videoPrice = postPrice * 1.75;
+  //   const engRate = ((likes + comments) / followers) * 100;
+  //   const postPrice = (likes + comments) * cpe;
+  //   const storyPrice = (followers * (storyReachPercent / 100) * cpm) / 50;
+  //   const videoPrice = postPrice * 1.75;
 
   return (
     <section className="results wrapper">
