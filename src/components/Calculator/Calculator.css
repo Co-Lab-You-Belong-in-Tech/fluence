@@ -4,7 +4,6 @@
     flex-direction: row;
     position: relative;
     background: #FAFAFA;
-    padding-top: 50px;
     font-size: 1.5rem;
 }
 
@@ -217,7 +216,7 @@
     color: #FFFFFF;
 }
 
-.analyze-btn {
+.submit-btn {
     color: white;
     line-height: 3.8rem;
     margin:auto;
