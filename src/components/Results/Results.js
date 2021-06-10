@@ -60,6 +60,9 @@ const Results = () => {
 
   return (
     <section className="results wrapper">
+      <h2 className="handle-mobile">
+        @{handle === '' ? 'userhandle' : handle.replace(/^[@]+/, '')}
+      </h2>
       <div className="results-top">
         <div className="results-top-left">
           <Images influencerType={influenceType} />
@@ -168,7 +171,7 @@ const Results = () => {
         </div>
       </div>
 
-      <h2>Brands Working with Similar Creators</h2>
+      <h2 className="brand-text">Brands Working with Similar Creators</h2>
       <div className="brand-names">
         {content[influenceType] ? (
           <ul>

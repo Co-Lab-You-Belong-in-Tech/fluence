@@ -89,7 +89,7 @@ class Calculator extends Component {
     }
 
     render() {
-        const influenceTypeList =["Beauty", "Blogger/Vlogger", "Fashion", "Gamer", "Parenting", "Photography", "Sport/Fitness", "Tech/Gadget", "Travel", "+Others"];
+        const influenceTypeList =["Beauty", "Blogger", "Fashion", "Gamer", "Parenting", "Photographer", "Sports", "Tech", "Travel", "Other"];
         return (
             <section className="calc-container wrapper">
                 <div className="calc-right-wrapper">

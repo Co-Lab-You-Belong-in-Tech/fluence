@@ -11,14 +11,13 @@ import travel from '../../assets/travel.svg';
 import other from '../../assets/other.svg';
 
 const Images = ({ influencerType }) => {
-  //   console.log(influencerType);
   let image;
 
   switch (true) {
     case influencerType === 'Beauty':
       image = beauty;
       break;
-    case influencerType === 'Blogger/Vlogger':
+    case influencerType === 'Blogger':
       image = blogger;
       break;
     case influencerType === 'Fashion':
@@ -33,10 +32,10 @@ const Images = ({ influencerType }) => {
     case influencerType === 'Photographer':
       image = photographer;
       break;
-    case influencerType === 'Sports & Fitness':
+    case influencerType === 'Sports':
       image = sports;
       break;
-    case influencerType === 'Tech/Gadgets':
+    case influencerType === 'Tech':
       image = tech;
       break;
     case influencerType === 'Travel':
