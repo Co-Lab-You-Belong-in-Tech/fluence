@@ -15,6 +15,10 @@
     padding: 50px 40px;
 }
 
+section.results {
+    margin-bottom: 50px;
+}
+
 .results h2 {
     font-size: 4rem;
     line-height: 6.5rem;
@@ -39,6 +43,11 @@
 .results .influencer-type h3 {
     font-size: 3.5rem;
     letter-spacing: -0.011em;
+}
+
+.results .influencer-type span {
+    display: block;
+    margin-top: 15px;
 }
 
 .results .results-metrics-container {
@@ -95,6 +104,10 @@
     border-radius: 12px;
     box-shadow: var(--box-shadow-inset);
     padding: 0 40px 30px 30px;
+}
+
+.results .results-pricing-container {
+    margin: 20px 0;
 }
 
 .results .results-pricing-container h3 {
@@ -162,7 +175,12 @@
 .results .results-content div {
     border-radius: 12px;
     box-shadow: var(--box-shadow-inset);
-    padding: 40px 40px 15px;
+    padding: 40px 60px;
+}
+
+.results .results-content .thumbs-up,
+.results .results-content .thumbs-down {
+    height: 345px;
 }
 
 .results .results-content .thumbs-up {
@@ -173,28 +191,27 @@
     margin: 0 40px 0 15px;
 }
 
-.results .results-content h5 {
-    font-size: 2rem;
-    letter-spacing: -0.011em;
-}
-
 .results .results-content ul {
     font-size: 1.8rem;
     font-weight: normal;
     letter-spacing: -0.011em;
-    margin: 3px 0 25px 45px;
 }
 
-.results .brand-names {
+.results .results-content li {
+    margin-top: 3px;
+}
+
+.results .brand-names ul {
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
 }
 
-.results .brand-names p {
+.results .brand-names li {
     border-radius: 50%;
     display: grid;
     place-items: center;
+    text-align: center;
     width: 175px;
     height: 175px;
     box-shadow: var(--box-shadow);

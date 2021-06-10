@@ -1,77 +1,98 @@
 import { useLocation } from 'react-router-dom';
-// import instagram from '../../assets/instagram.svg';
-import fashion from '../../assets/fashion.svg';
+import Images from './Images';
+import content from './Content';
 import thumbsUp from '../../assets/thumbs-up.svg';
 import thumbsDown from '../../assets/thumbs-down.svg';
 import './Results.css';
 
 const Results = () => {
   const location = useLocation();
-  console.log(location);
-  //   const likes = parseFloat(location.state.totalLikeOnPost);
-  //   const comments = parseFloat(location.state.totalCommentOnPost);
-  //   const followers = parseFloat(location.state.totalFollowerCount);
-  //   const { handle, influenceType } = location.state;
-  //   const cpe = 0.28;
-  //   const cpm = 0.223;
-  //   let storyReachPercent;
+  const likes = parseFloat(location.state.totalLikeOnPost);
+  const comments = parseFloat(location.state.totalCommentOnPost);
+  const followers = parseFloat(location.state.totalFollowerCount);
+  const { handle, influenceType } = location.state;
+  const cpe = 0.28;
+  const cpm = 0.223;
+  let storyReachPercent;
+  let influencerLevel;
 
-  //   switch (true) {
-  //     case followers > 2000 && followers <= 5000:
-  //       storyReachPercent = 42.1;
-  //       break;
-  //     case followers > 5000 && followers <= 10000:
-  //       storyReachPercent = 35.7;
-  //       break;
-  //     case followers > 10000 && followers <= 20000:
-  //       storyReachPercent = 31;
-  //       break;
-  //     case followers > 20000 && followers <= 40000:
-  //       storyReachPercent = 26.9;
-  //       break;
-  //     case followers > 40000 && followers <= 75000:
-  //       storyReachPercent = 23.5;
-  //       break;
-  //     case followers > 75000 && followers <= 100000:
-  //       storyReachPercent = 21.3;
-  //       break;
-  //     case followers > 100000:
-  //       storyReachPercent = 19.9;
-  //       break;
-  //     default:
-  //       storyReachPercent = 0;
-  //   }
+  switch (true) {
+    case followers > 2000 && followers <= 5000:
+      storyReachPercent = 42.1;
+      break;
+    case followers > 5000 && followers <= 10000:
+      storyReachPercent = 35.7;
+      break;
+    case followers > 10000 && followers <= 20000:
+      storyReachPercent = 31.0;
+      break;
+    case followers > 20000 && followers <= 40000:
+      storyReachPercent = 26.9;
+      break;
+    case followers > 40000 && followers <= 75000:
+      storyReachPercent = 23.5;
+      break;
+    case followers > 75000 && followers <= 100000:
+      storyReachPercent = 21.3;
+      break;
+    case followers > 100000:
+      storyReachPercent = 19.9;
+      break;
+    default:
+      storyReachPercent = 0;
+  }
 
-  //   const engRate = ((likes + comments) / followers) * 100;
-  //   const postPrice = (likes + comments) * cpe;
-  //   const storyPrice = (followers * (storyReachPercent / 100) * cpm) / 50;
-  //   const videoPrice = postPrice * 1.75;
+  switch (true) {
+    case followers > 0 && followers <= 10000:
+      influencerLevel = 'Nano-Influencer';
+      break;
+    case followers > 10000 && followers <= 200000:
+      influencerLevel = 'Micro-Influencer';
+      break;
+    default:
+      influencerLevel = '';
+  }
+
+  const engRate = ((likes + comments) / followers) * 100;
+  const postPrice = (likes + comments) * cpe;
+  const storyPrice = (followers * (storyReachPercent / 100) * cpm) / 50;
+  const videoPrice = postPrice * 1.75;
 
   return (
     <section className="results wrapper">
       <div className="results-top">
-        {/* className */}
         <div className="results-top-left">
-          <img src={fashion} alt="" />
+          <Images influencerType={influenceType} />
           <div className="influencer-type">
-            <h3>Fashion Nano-Influencer</h3>
+            {influencerLevel ? (
+              <h3>
+                {influenceType} <span>{influencerLevel}</span>
+              </h3>
+            ) : (
+              <h3>{influenceType}</h3>
+            )}
           </div>
           <div className="results-metrics-container">
             <div className="results-metrics">
               <div>
-                <p>12k</p>
+                <p>{followers / 1000}k</p>
                 <p>Followers</p>
               </div>
             </div>
             <div className="results-metrics">
               <div>
-                <p>13.7%</p>
+                <p>
+                  {Number.isNaN(engRate) || !Number.isFinite(engRate)
+                    ? 0
+                    : engRate.toFixed(1)}
+                  %
+                </p>
                 <p>Eng. Rate</p>
               </div>
             </div>
             <div className="results-metrics">
               <div>
-                <p>$.43</p>
+                <p>${cpe.toString().replace(/^[0]+/, '')}</p>
                 <p>CPE</p>
               </div>
             </div>
@@ -79,20 +100,26 @@ const Results = () => {
         </div>
 
         <div className="results-top-right">
-          <h2>@userhandle</h2>
+          <h2>@{handle === '' ? 'userhandle' : handle.replace(/^[@]+/, '')}</h2>
           <div className="results-pricing-container">
             <h3>Instagram Pricing Rate Estimate</h3>
             <div className="results-pricing">
               <div>
-                <p>$100 - $150</p>
+                <p>{`$${Math.round(postPrice * 0.8)} - $${Math.round(
+                  postPrice * 1.2
+                )}`}</p>
                 <p>Post</p>
               </div>
               <div>
-                <p>$200 - $250</p>
+                <p>{`$${Math.round(videoPrice * 0.8)} - $${Math.round(
+                  videoPrice * 1.2
+                )}`}</p>
                 <p>Video</p>
               </div>
               <div>
-                <p>$100 - $150</p>
+                <p>{`$${Math.round(storyPrice * 0.8)} - $${Math.round(
+                  storyPrice * 1.2
+                )}`}</p>
                 <p>Story</p>
               </div>
             </div>
@@ -117,54 +144,25 @@ const Results = () => {
           <div className="results-content">
             <img src={thumbsUp} alt="thumbs up" />
             <div className="thumbs-up">
-              <h5>Theme & Quality Posts</h5>
-              <ul>
-                <li>Stick to one design theme for your feed.</li>
-                <li>Invest in a high quality camera to remove blurriness.</li>
-              </ul>
-              <h5>Understanding Your Demographic Following</h5>
-              <ul>
-                <li>
-                  Keep your followers in mind - age group, gender, interests -
-                  this is important for brands to know that their products will
-                  reach the right audience.
-                </li>
-              </ul>
-              <h5>Instagram Features</h5>
-              <ul>
-                <li>
-                  Brands want to see up-to-date, innovative influencers,
-                  especially in the micro space. Make sure to use Instagram's
-                  latest features!
-                </li>
-              </ul>
+              {content[influenceType] ? (
+                <ul>
+                  {content[influenceType].do.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
           </div>
           <div className="results-content">
             <img src={thumbsDown} alt="thumbs down" />
             <div className="thumbs-down">
-              <h5>Sponsored Post Overload</h5>
-              <ul>
-                <li>Brands want to see organic content.</li>
-                <li>
-                  Consider deleting sponsored posts based on the cooldown period
-                  on your influencer contract.
-                </li>
-              </ul>
-              <h5>Overgeneralized Posts</h5>
-              <ul>
-                <li>
-                  Posts that aren't targeting your specific audience may lower
-                  your engagement rate.
-                </li>
-              </ul>
-              <h5>Buying Followers</h5>
-              <ul>
-                <li>
-                  Brands that are able to tell real vs fake followers (plus it
-                  hurts your engagement rate!) and can hurt your credibility.
-                </li>
-              </ul>
+              {content[influenceType] ? (
+                <ul>
+                  {content[influenceType].dont.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
           </div>
         </div>
@@ -172,12 +170,13 @@ const Results = () => {
 
       <h2>Brands Working with Similar Creators</h2>
       <div className="brand-names">
-        {/* double words */}
-        <p>Banana Republic</p>
-        <p>Daniel Wellington</p>
-        <p>Vitabird C12</p>
-        <p>IGK Hair</p>
-        <p>Rael</p>
+        {content[influenceType] ? (
+          <ul>
+            {content[influenceType].brands.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        ) : null}
       </div>
     </section>
   );
