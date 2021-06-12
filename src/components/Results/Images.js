@@ -45,7 +45,7 @@ const Images = ({ influencerType }) => {
       image = other;
   }
 
-  return <img src={image} alt="" />;
+  return <img className="image" src={image} alt="" />;
 };
 
 export default Images;

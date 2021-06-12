@@ -13,9 +13,6 @@
                       inset -10px -10px 20px #FFFFFF;
     line-height: 2.4rem;
     padding: 50px 40px;
-}
-
-section.results {
     margin-bottom: 50px;
 }
 
@@ -128,7 +125,7 @@ section.results {
 .results .results-pricing div {
     border-right: 3px solid #1F1B1B;
     text-align: center;
-    padding-right: 30px;
+    padding-right: 20px;
     margin-right: 20px;
 }
 
@@ -139,8 +136,9 @@ section.results {
 }
 
 .results .results-pricing p {
-    font-size: 3rem;
-    line-height: 4.8rem;
+    font-weight: normal;
+    font-size: 2.5rem;
+    line-height: 3.5rem;
     letter-spacing: -0.022em;
 }
 
@@ -183,11 +181,6 @@ section.results {
     padding: 40px 60px;
 }
 
-.results .results-content .thumbs-up,
-.results .results-content .thumbs-down {
-    height: 345px;
-}
-
 .results .results-content .thumbs-up {
     margin: 0 15px 0 40px;
 }
@@ -221,15 +214,11 @@ section.results {
     width: 175px;
     height: 175px;
     box-shadow: var(--box-shadow);
-    padding: 1em;
+    padding: 0.6em;
 }
 
-@media (max-width: 1335px) {
-    .results .results-pricing p {
-        font-weight: normal;
-        font-size: 2.5rem;
-        line-height: 3.5rem;
-    }
+.arrow {
+    display: none;
 }
 
 @media (max-width: 1275px) {
@@ -277,7 +266,6 @@ section.results {
 
     .results .results-content .thumbs-up,
     .results .results-content .thumbs-down {
-        height: auto;
         margin: 0 30px;
     }
 }
@@ -296,5 +284,130 @@ section.results {
 @media (max-width: 900px) {
     .results .results-content {
         flex: auto;
+    }
+
+    .arrow {
+        display: block;
+        cursor: pointer;
+        margin: 0 auto 15px;
+    }
+}
+
+@media (max-width: 680px) {
+    .results .handle-mobile {
+        font-size: 2rem;
+        line-height: 3.5rem;
+    }
+
+    .image {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .results .influencer-type {
+        width: auto;
+        height: 50px;
+    }
+
+    .results .influencer-type h3,
+    .results .results-pricing-container h3,
+    .results .results-pricing p,
+    .results .results-description h4,
+    .results .results-theory h2,
+    .results .brand-text,
+    .results .brand-names li {
+        font-size: 1.6rem;
+        line-height: 2rem;
+    }
+
+    .results .influencer-type span {
+        display: inline;
+    }
+
+    .results .results-metrics {
+        width: 80px;
+        height: 80px;
+    }
+
+    .results .results-metrics div {
+        width: 70px;
+        height: 70px;
+    }
+
+    .results .results-metrics p {
+        font-size: 1.4rem;
+        line-height: 1.5rem;
+    }
+
+    .results .results-metrics p:last-child {
+        font-size: 1.2rem;
+    }
+
+    .results .results-pricing-container {
+        padding: 0 0 25px 0;
+    }
+
+    .results .results-pricing-container h3 {
+        margin: 25px 0;
+    }
+
+    .results .results-pricing {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .results .results-pricing div {
+        border-right: none;
+        border-bottom: 2px solid #1F1B1B;
+        width: 40%;
+        padding: 0 0 10px 0;
+        margin: 0 0 10px 0;
+    }
+
+    .results .results-description {
+        padding: 0 15px 25px;
+    }
+
+    .results .results-description h4 {
+        margin: 25px 0 15px;
+    }
+
+    .results .results-description p,
+    .results .results-content ul {
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+    }
+
+    .results .results-content .thumbs-up,
+    .results .results-content .thumbs-down {
+        margin: 0 15px;
+    }
+
+    .results .results-content div {
+        padding: 20px 30px;
+    }
+
+    .results .brand-text {
+        margin-top: -30px;
+    }
+
+    .results .brand-names li {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 420px) {
+    .results {
+        padding: 50px 15px;
+    }
+
+    .results .handle-mobile {
+        width: auto;
+    }
+
+    .results .results-content img {
+        width: 40%;
     }
 }

@@ -1,12 +1,17 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import Images from './Images';
 import content from './Content';
 import thumbsUp from '../../assets/thumbs-up.svg';
 import thumbsDown from '../../assets/thumbs-down.svg';
+import arrow from '../../assets/arrow-up.svg';
 import './Results.css';
 
 const Results = () => {
   const location = useLocation();
+  const titleRef = useRef();
   const likes = parseFloat(location.state.totalLikeOnPost);
   const comments = parseFloat(location.state.totalCommentOnPost);
   const followers = parseFloat(location.state.totalFollowerCount);
@@ -58,130 +63,140 @@ const Results = () => {
   const storyPrice = (followers * (storyReachPercent / 100) * cpm) / 50;
   const videoPrice = postPrice * 1.75;
 
+  const handleClick = () => {
+    titleRef.current.scrollIntoView({ behaviour: 'smooth' });
+  };
+
   return (
-    <section className="results wrapper">
-      <h2 className="handle-mobile">
-        @{handle === '' ? 'userhandle' : handle.replace(/^[@]+/, '')}
-      </h2>
-      <div className="results-top">
-        <div className="results-top-left">
-          <Images influencerType={influenceType} />
-          <div className="influencer-type">
-            {influencerLevel ? (
-              <h3>
-                {influenceType} <span>{influencerLevel}</span>
-              </h3>
-            ) : (
-              <h3>{influenceType}</h3>
-            )}
+    <>
+      <section className="results wrapper" ref={titleRef}>
+        <h2 className="handle-mobile">
+          @{handle === '' ? 'userhandle' : handle.replace(/^[@]+/, '')}
+        </h2>
+        <div className="results-top">
+          <div className="results-top-left">
+            <Images influencerType={influenceType} />
+            <div className="influencer-type">
+              {influencerLevel ? (
+                <h3>
+                  {influenceType} <span>{influencerLevel}</span>
+                </h3>
+              ) : (
+                <h3>{influenceType}</h3>
+              )}
+            </div>
+            <div className="results-metrics-container">
+              <div className="results-metrics">
+                <div>
+                  <p>{followers / 1000}k</p>
+                  <p>Followers</p>
+                </div>
+              </div>
+              <div className="results-metrics">
+                <div>
+                  <p>
+                    {Number.isNaN(engRate) || !Number.isFinite(engRate)
+                      ? 0
+                      : engRate.toFixed(1)}
+                    %
+                  </p>
+                  <p>Eng. Rate</p>
+                </div>
+              </div>
+              <div className="results-metrics">
+                <div>
+                  <p>${cpe.toString().replace(/^[0]+/, '')}</p>
+                  <p>CPE</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="results-metrics-container">
-            <div className="results-metrics">
-              <div>
-                <p>{followers / 1000}k</p>
-                <p>Followers</p>
+
+          <div className="results-top-right">
+            <h2>
+              @{handle === '' ? 'userhandle' : handle.replace(/^[@]+/, '')}
+            </h2>
+            <div className="results-pricing-container">
+              <h3>Instagram Pricing Rate Estimate</h3>
+              <div className="results-pricing">
+                <div>
+                  <p>{`$${Math.round(postPrice * 0.8)} - $${Math.round(
+                    postPrice * 1.2
+                  )}`}</p>
+                  <p>Post</p>
+                </div>
+                <div>
+                  <p>{`$${Math.round(videoPrice * 0.8)} - $${Math.round(
+                    videoPrice * 1.2
+                  )}`}</p>
+                  <p>Video</p>
+                </div>
+                <div>
+                  <p>{`$${Math.round(storyPrice * 0.8)} - $${Math.round(
+                    storyPrice * 1.2
+                  )}`}</p>
+                  <p>Story</p>
+                </div>
               </div>
             </div>
-            <div className="results-metrics">
-              <div>
-                <p>
-                  {Number.isNaN(engRate) || !Number.isFinite(engRate)
-                    ? 0
-                    : engRate.toFixed(1)}
-                  %
-                </p>
-                <p>Eng. Rate</p>
+            <div className="results-description">
+              <h4>Pricing Rate Breakdown</h4>
+              <p>
+                The pricing rate is affected by various metrics such as
+                industry, total likes and comments, average number of posts,
+                number of followers, engagement rate and cost per engagement.
+                The calculations are estimations you can use to provide pricing
+                details to brands you want to work with but should be used with
+                your own discretion.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="results-theory">
+          <h2>Growing Your Influence</h2>
+          <div className="results-theory-container">
+            <div className="results-content">
+              <img src={thumbsUp} alt="thumbs up" />
+              <div className="thumbs-up">
+                {content[influenceType] ? (
+                  <ul>
+                    {content[influenceType].do.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                ) : null}
               </div>
             </div>
-            <div className="results-metrics">
-              <div>
-                <p>${cpe.toString().replace(/^[0]+/, '')}</p>
-                <p>CPE</p>
+            <div className="results-content">
+              <img src={thumbsDown} alt="thumbs down" />
+              <div className="thumbs-down">
+                {content[influenceType] ? (
+                  <ul>
+                    {content[influenceType].dont.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                ) : null}
               </div>
             </div>
           </div>
         </div>
 
-        <div className="results-top-right">
-          <h2>@{handle === '' ? 'userhandle' : handle.replace(/^[@]+/, '')}</h2>
-          <div className="results-pricing-container">
-            <h3>Instagram Pricing Rate Estimate</h3>
-            <div className="results-pricing">
-              <div>
-                <p>{`$${Math.round(postPrice * 0.8)} - $${Math.round(
-                  postPrice * 1.2
-                )}`}</p>
-                <p>Post</p>
-              </div>
-              <div>
-                <p>{`$${Math.round(videoPrice * 0.8)} - $${Math.round(
-                  videoPrice * 1.2
-                )}`}</p>
-                <p>Video</p>
-              </div>
-              <div>
-                <p>{`$${Math.round(storyPrice * 0.8)} - $${Math.round(
-                  storyPrice * 1.2
-                )}`}</p>
-                <p>Story</p>
-              </div>
-            </div>
-          </div>
-          <div className="results-description">
-            <h4>Pricing Rate Breakdown</h4>
-            <p>
-              The pricing rate is affected by various metrics such as industry,
-              total likes and comments, average number of posts, number of
-              followers, engagement rate and cost per engagement. The
-              calculations are estimations you can use to provide pricing
-              details to brands you want to work with but should be used with
-              your own discretion.
-            </p>
-          </div>
+        <h2 className="brand-text">Brands Working with Similar Creators</h2>
+        <div className="brand-names">
+          {content[influenceType] ? (
+            <ul>
+              {content[influenceType].brands.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          ) : null}
         </div>
-      </div>
+      </section>
 
-      <div className="results-theory">
-        <h2>Growing Your Influence</h2>
-        <div className="results-theory-container">
-          <div className="results-content">
-            <img src={thumbsUp} alt="thumbs up" />
-            <div className="thumbs-up">
-              {content[influenceType] ? (
-                <ul>
-                  {content[influenceType].do.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              ) : null}
-            </div>
-          </div>
-          <div className="results-content">
-            <img src={thumbsDown} alt="thumbs down" />
-            <div className="thumbs-down">
-              {content[influenceType] ? (
-                <ul>
-                  {content[influenceType].dont.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              ) : null}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <h2 className="brand-text">Brands Working with Similar Creators</h2>
-      <div className="brand-names">
-        {content[influenceType] ? (
-          <ul>
-            {content[influenceType].brands.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        ) : null}
-      </div>
-    </section>
+      <img src={arrow} alt="up arrow" className="arrow" onClick={handleClick} />
+    </>
   );
 };
 
